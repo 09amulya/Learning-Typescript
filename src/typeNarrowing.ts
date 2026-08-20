@@ -1,3 +1,4 @@
+
 function getChai(kind: string |number){
    if(typeof kind ==='string') {
     return `Making ${kind} chai...`
@@ -66,4 +67,32 @@ function serveOrder(item:ChaiOrder | string){
     return `Serving custom chai: ${item}`
 }
 
+type MasalaChai = {type: "masala",spicelevel: number};
+type GingerChai = {type: "ginger",amount: number};
+type ElaichiChai = {type: "elaichi",aroma: number};
 
+type Chai = MasalaChai |GingerChai | ElaichiChai
+function MakeChai(order: Chai){
+    switch (order.type) {
+        case "masala":
+            return `Masala Chai`
+            break;
+        case "ginger":
+            return `Masala Chai`
+            break;
+        case "elaichi":
+            return `elaichi Chai`
+            break;
+    }
+}
+
+
+function brew(order:MasalaChai | GingerChai){
+    if("spicelevel" in order){
+       //  
+    }
+}
+
+// function isStringArray(arr:unknown): arr is string[]{
+
+// }
